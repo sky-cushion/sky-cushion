@@ -1,0 +1,2878 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class=" js ">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=8" /> -->
+<meta name="language" content="en">
+
+<title>학생정보광장</title>
+
+<!-- CSS -->
+
+<link type="text/css" href="/css/themes/custom-theme/jquery-ui-1.10.3.custom.css" rel="Stylesheet">
+<link type="text/css" href="/css/themes/ui.jqgrid.css" rel="Stylesheet">
+<link type="text/css" href="/css/themes/jqGrid.overrides.css" rel="Stylesheet">
+<link type="text/css" href="/css/themes/ui.multiselect.css" rel="Stylesheet">
+<link type="text/css" href="/css/themes/ui.spinner.css" rel="Stylesheet">
+
+<!-- content.css -->
+<link type="text/css" href="/css/content.css" rel="Stylesheet">
+
+<!-- portal 관련 -->
+
+
+
+<!-- Mobile left menu slide CSS/js -->
+
+<!-- Navigation CSS -->
+
+<link type="text/css" rel="Stylesheet" href="/css/sub.css">
+
+<!-- 학생 -->
+
+<!-- bootstrap -->
+<link type="text/css" rel="Stylesheet" href="bootstrap.min.css">
+<!-- fontawesome -->
+<link type="text/css" rel="Stylesheet" href="/css/font-awesome-4.7.0/font-awesome.min.css">
+<!-- jquery.mobile -->
+
+
+<style type="text/css">
+	/* Small devices (tablets, 768px and up) */
+	@media (min-width: @screen-sm-min) {
+	}
+
+	/* Medium devices (desktops, 992px and up) */
+	@media (min-width: @screen-md-min) {
+	}
+
+	/* Large devices (large desktops, 1200px and up) */
+	@media (min-width: @screen-lg-min) {
+	}
+	#ui-id-1 {height: 30%; overflow-y: scroll;}
+
+	/*.ui-jqgrid .ui-jqgrid-htable th div{
+	    padding-top: 0px !important;
+	}*/
+	body, div, label, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button{
+		font-size: 1.04em;
+	}
+</style>
+
+<!-- jQeury -->
+<script type="text/javascript" src="/js/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery-migrate-1.2.1.js"></script>
+<script type="text/javascript" src="/js/jqgrid/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.fileDownload.js"></script>
+<!-- jQuery Form -->
+<script type="text/javascript" src="/js/jquery/jquery.form.js"></script>
+<!-- jQuery Validate -->
+<script type="text/javascript" src="/js/jquery/jquery-validate.js"></script>
+<!-- jQuery mobile -->
+
+
+<!-- bootstrap -->
+<script type="text/javascript" src="/js/bootstrap-3.3.6-dist/bootstrap.min.js"></script>
+
+<!-- jQuery jqGrid -->
+
+<script type="text/javascript" src="/js/jqgrid/i18n/grid.locale-kr.js"></script>
+
+
+<script type="text/javascript" src="/js/jqgrid/jquery.jqGrid.src.js"></script>
+
+
+
+<script type="text/javascript" src="/js/jqgrid/jquery.tablednd.js"></script>
+<script type="text/javascript" src="/js/jqgrid/jquery.contextmenu.js"></script>
+<script type="text/javascript" src="/js/jqgrid/ui.multiselect.js"></script>
+
+<!-- jQuery Mask -->
+<script type="text/javascript" src="/js/jquery/jquery.maskedinput.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.price_format.2.0.js"></script>
+
+<script type="text/javascript" src="/js/jquery/inputmask/jquery.inputmask.bundle.js"></script><style type="text/css">span.im-caret {
+    -webkit-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        border-right-color: black;
+    }
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+@-webkit-keyframes blink {
+    from, to {
+        border-right-color: black;
+    }
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+span.im-static {
+    color: grey;
+}
+
+div.im-colormask {
+    display: inline-block;
+    border-style: inset;
+    border-width: 2px;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+div.im-colormask > input {
+    position: absolute !important;
+    display: inline-block;
+    background-color: transparent;
+    color: transparent;
+    -webkit-appearance: caret;
+    -moz-appearance: caret;
+    appearance: caret;
+    border-style: none;
+    left: 0; /*calculated*/
+}
+
+div.im-colormask > input:focus {
+    outline: none;
+}
+
+div.im-colormask > input::-moz-selection{
+    background: none;
+}
+
+div.im-colormask > input::selection{
+    background: none;
+}
+div.im-colormask > input::-moz-selection{
+    background: none;
+}
+
+div.im-colormask > div {
+    color: black;
+    display: inline-block;
+    width: 100px; /*calculated*/
+}</style>
+<script type="text/javascript" src="/js/jquery/inputmask/inputmask/inputmask.date.extensions.js"></script>
+<script type="text/javascript" src="/js/jquery/inputmask/inputmask/inputmask.extensions.js"></script>
+
+<!-- User Define Javascript -->
+<script type="text/javascript" src="/js/common.grid.js"></script>
+<script type="text/javascript" src="/js/common.freeform.js"></script>
+<script type="text/javascript" src="/js/common.ime.js"></script>
+<script type="text/javascript" src="/js/common.button.js"></script>
+<script type="text/javascript" src="/js/common.validate.js"></script>
+<script type="text/javascript" src="/js/common.popup.js"></script>
+<script type="text/javascript" src="/js/common.file.js"></script>
+<script type="text/javascript" src="/js/common.spinner.js"></script>
+<script type="text/javascript" src="/js/common.jquery.js"></script>
+<script type="text/javascript" src="/js/common.func.js"></script>
+<script type="text/javascript" src="/js/common.jstl.js"></script>
+<script type="text/javascript" src="/js/common.gridex.js"></script>
+<script type="text/javascript" src="/js/common.portal.js"></script>
+<script type="text/javascript" src="/js/common.date.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.cycle.all.js"></script>
+
+
+<script type="text/javascript" src="/js/basic.common.js"></script>
+<!-- jQuery jstree(prefix1.0_fix1) -->
+<script type="text/javascript" src="/js/jstree/jquery.jstree.js"></script>
+
+<!-- Server Push 관련 -->
+<script type="text/javascript" src="/js/eventsource.js"></script>
+<!-- cross domain ajax -->
+<script type="text/javascript" src="/js/jquery/jquery.xdomainajax.js"></script>
+
+<script type="text/javascript" src="/js/common.left.js"></script>
+<script type="text/javascript" src="/js/common.class.js"></script>
+
+<script type="text/javascript">
+	var CONTEXT_PATH = "";
+	var contextPath = "";
+	var commonMenuId = "";
+	var commonProgramId = "SchMain";
+	var sttsMenuYn = "";
+	var languageCd = "ko";
+	var gwHostName = "gw.dgist.ac.kr:7890";
+
+	var gridSize = {};
+	var isStudReal;
+	var divUrl;
+	$(document).ready(function(){
+		isStudRealServer();
+	//	mobileSchHome();
+		$(".ctl_select").addClass("form-control");
+		$(".ctl_select").removeClass("ctl_select");
+		$(".ctl_input").addClass("form-control");
+		$(".ctl_input").removeClass("ctl_input");
+		$(".ctl_textarea").addClass("form-control");
+		$(".ctl_textarea").removeClass("ctl_textarea");
+		$(".selectbox").addClass("form-control");
+		$(".selectbox").removeClass("selectbox");
+
+		//학생공통정보를 사용하는 화면의 경우 commonMenuId를 넘기도록 추가(2019.09.20)
+		if($("form[id='hiddenStudForm']").find("#commonMenuId").val() == null){
+			var formString = "";
+			formString += '<input type="hidden" id="commonMenuId" name="commonMenuId" value="" />';
+			formString += '<input type="hidden" id="commonProgramId" name="commonProgramId" value="SchMain" />';
+			$('#hiddenStudForm').append(formString);
+		}
+
+		if($("#topButton").css("display")==="none"){
+			$( "#bodyLeft4lager" ).show();
+		}
+
+		/* bootstrap 특정 버전에서 jquery.ui.js과의 충돌로 인해
+		   dialog 이미지 일부가 출력되지 않는 현상 수정 (2017.07.25)
+		 */
+		var bootstrapButton = $.fn.button.noConflict(); // return $.fn.button to previously assigned value
+		$.fn.bootstrapBtn = bootstrapButton;            // give $().bootstrapBtn the Bootstrap functionality
+
+		setTimeout(gridResizing,500);
+		$( window ).resize(function() {
+// 			console.log( "window width : " +$( window ).width() );
+			if($( window ).width() >= 1200){
+				if($("#topButton").css("display")==="none"){
+					$( "#bodyLeft4lager" ).show();
+				}
+			}
+			else{
+				if($("#topButton").css("display")!=="none"){
+					$( "#bodyLeft4lager" ).hide();
+				}
+			}
+
+			gridResizing();
+		});
+
+		//iframe resize
+	/* 	$('iframe').load(function(){
+		    var the_height = this.contentWindow.document.body.scrollHeight;
+		    this.style.height = the_height+'px';
+		}); */
+
+		firstOpenMmenu();
+		// 공통기능(단축키) 추가
+// 		fnShortcutKey(new Array(), e);
+
+		//다국어 선택시
+		$("#searchLanguageView").change(function (){
+			fnChangeLanguage("searchLanguageView");
+		});
+		$("#searchLanguageView2").change(function (){
+			fnChangeLanguage("searchLanguageView2");
+		});
+	});
+
+	function fnChangeLanguage(v){
+
+		var currentUrl = window.location.href;
+		var pnt = currentUrl.indexOf("language=");
+		if(pnt >-1){
+			currentUrl = currentUrl.substring(0,pnt-1);
+		}
+		if(currentUrl.indexOf("?") > -1){
+			currentUrl += "&";
+		}
+		else{
+			currentUrl += "?";
+		}
+		window.location.href = currentUrl+ "language=" + $("#"+v).val();
+	}
+
+	function gridResizing(){
+		if(gridReSize != null){
+			$.each(gridReSize, function(i,v){
+				if(gridSize[v+".bf"] == null)gridSize[v+".bf"];
+				if(gridSize[v+".af"] == null)gridSize[v+".af"];
+				if(gridSize[v+".st"] == null)gridSize[v+".st"];
+// 				gridResizing(v);
+				gridSize[v+".af"] = parseInt($("#jq"+v).outerWidth())-30;
+				if(gridSize[v+".bf"] !== gridSize[v+".af"]){
+					clearTimeout(gridSize[v+".st"]);
+					gridSize[v+".bf"] = gridSize[v+".af"];
+					gridSize[v+".st"] = setTimeout(function(){
+						$("#"+v).setGridWidth( gridSize[v+".af"] );
+					}, 500);
+				}
+			});
+		}
+	}
+
+	//중메뉴 펼치기
+	function viewMmenu(index) {
+		$(".depth1_on").addClass("depth1");
+		$(".depth1").removeClass("depth1_on");
+		$("#depth1"+index).addClass("depth1_on");
+		var so = document.getElementById('mmenu'+index);
+		var all_array = $("* ul");
+		$.each(all_array, function() {
+			if(this.id.substring(0,5) == "mmenu"){
+				if(this.id == so.id){
+					if (so.style.display == 'none') {
+						so.style.display = '';
+					} else {
+						so.style.display = 'none';
+					}
+				}else{
+					this.style.display = 'none';
+				}
+			}
+		});
+	}
+	//소메뉴 펼치기
+	function viewSmenu(index) {
+		$(".depth2_on").addClass("depth2");
+		$(".depth2").removeClass("depth2_on");
+		$("#depth2"+index).addClass("depth2_on");
+		var so = document.getElementById('smenu'+index);
+		var all_array = $("* ul");
+		$.each(all_array, function() {
+			if(this.id.substring(0,5) == "smenu"){
+				if(this.id == so.id){
+					if (so.style.display == 'none') {
+						so.style.display = '';
+					} else {
+						so.style.display = 'none';
+					}
+				}else{
+					this.style.display = 'none';
+				}
+			}
+		});
+	}
+	//처음 메뉴 펼치기
+	function firstOpenMmenu() {
+		var localHost = $(location).attr("protocol") +"//"+ $(location).attr("host");
+		var localUrl = $(location).attr('href');
+// 		localUrl = localUrl.replace("#","");
+// 		localUrl = localUrl.replace(localHost,"");
+		var $depth3 = $(".depth3");
+		$.each($depth3, function(i,o) {
+			var $url = $(o).attr("URL");
+// 			console.log("$url : "+$url);
+			if(localUrl.indexOf($url) > -1){
+				var $mmenuid = $(o).parent().attr("mmenuid");
+				viewMmenu($mmenuid);
+				$(o).addClass("depth3_on");
+			}
+			else{
+				$(o).removeClass("depth3_on");
+			}
+		});
+		//
+	}
+
+	// 메뉴별 제외IP 및 대역 체크 후 페이지이동
+	function goPage(menu_id, menu_nm, menu_url, menu_nav, favor_yn, stts_menu_yn) {
+		var favorYn = (favor_yn == null || favor_yn == "") ? null : favor_yn;
+// 		var sttsMenuYn = (stts_menu_yn == null || stts_menu_yn == "") ? null : stts_menu_yn;
+// 		var frm = document.createElement("searchForm1");
+// 		$(frm).ajaxSubmit({
+// 			dataType: 'json'
+// 			, url: '/com/leftFrame/checkIp.do?menuId=' + menu_id
+// 			, success: function(data){
+// 				$.each(data.list, function() {
+// 					if(this.ALLOW_ALL_CNT != '0' && this.ALLOW_CNT == '0'){
+// 						alert("이 메뉴에 허용된 IP가 아닙니다. 시스템관리자에게 연락하세요.");
+// 						return;
+// 					}
+// 					if(this.LIMIT_ALL_CNT != '0' && this.LIMIT_CNT != '0'){
+// 						alert("이 메뉴에 제한된 IP입니다. 시스템관리자에게 연락하세요.");
+// 						return;
+// 					}else{
+						var $urlForm = $("#urlForm");
+						$urlForm.attr("target", "_self");
+						$urlForm.find("#commonMenuId").val(menu_id);
+						$urlForm.find("#commonProgramTitle").val(menu_nm);
+						$urlForm.find("#commonMenuNav").val(menu_nav);
+						if(favorYn == "Y"){
+							$urlForm.attr("action", url);
+						}else{
+							$urlForm.attr("action", menu_url);
+						}
+						$urlForm.submit();
+// 					}
+// 				});
+// 			}
+// 		});
+	}
+
+	function fnToggleMenu(){
+		$( "#bodyLeft4lager" ).toggle( "fold", {}, 500 );
+	}
+	//로그아웃
+	function logOut(){
+		window.location.href = "/j_spring_security_logout";
+	}
+	//닫기
+	function fnClose(){
+		if(!confirm("창을 닫으시겠습니까?")) return;
+		window.close();
+	}
+	//학생모바일 페이지
+	function mobileSchHome() {
+		$("#homeForm").attr("target", "dgistPortalFrm");
+		$("#homeForm").submit();
+	}
+	function isStudRealServer(){
+		divUrl = 'http://my.dgist.ac.kr';
+	}
+
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+<script type="text/javascript" src="/js/sch.common.js"></script>
+<script type="text/javascript" src="/js/aps.common.js"></script>
+<script type="text/javascript" src="/js/sch.sbjtsearch.js"></script>
+<script type="text/javascript" src="/js/sch.empsearch.js"></script>
+
+
+<style type="text/css">
+	.a_link_blue { text-decoration:underline; color:blue; }
+	#ui-id-1 {overflow-y: auto;}
+	.ui-widget-content {border:1px solid #ddd;}
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var orgnDcd = 'CMN12.03';	//조직분류코드
+		var prmtShyr = "1"; //학년
+		var list4 = '0';
+		var schyn = 'N';
+
+		setPhoto();
+
+		//학부생일 때 학사력 기준으로 수강년도/학기에 수강상담내역이 없으면 알림 팝업  _시범운영 1학년, 2학년
+		/*if((orgnDcd == 'CMN12.03' && (prmtShyr == '1' || prmtShyr == '2')) && list4 <= 0 && schyn == 'Y'){
+			$( "#dialog-message" ).dialog({
+		      modal: true,
+		      height: "auto",
+		      width:500,
+		      buttons: {
+		        Ok: function() {
+		          $( this ).dialog( "close" );
+		        }
+		      }
+		    });
+		}else{ //해당없을 경우
+			$('#dialog-message').hide();
+		}*/
+
+	});
+	function setPhoto(){
+// 		var imgUrl = '/sys/file/downloadFile.do';
+		var imgUrl = 'http://my.dgist.ac.kr/sch/schUtil/downloadFile.do';
+		var $CONN_SEQ_NO = "YuzzWCYQNpMYqgExqXGX8g%3D%3D";
+		if($CONN_SEQ_NO != null && $CONN_SEQ_NO != ''){
+			imgUrl = imgUrl + "?ATFILE_CONN_NO="+$CONN_SEQ_NO+"&ATFILE_SEQ_NO="+'N3H4XObdANOOJ7XW1E6M9g%3D%3D';
+			$("#impStudImage").attr('src', imgUrl);
+		} else {
+			$("#impStudImage").attr('src', '/images/no_image.jpg');
+		}
+
+	}
+	function onImgError(){
+		$("#impStudImage").attr('src', '/images/no_image.jpg');
+	}
+</script>
+
+
+<style type="text/css" id="vakata-stylesheet">#vakata-dragged { display:block; margin:0 0 0 0; padding:4px 4px 4px 24px; position:absolute; top:-2000px; line-height:16px; z-index:10000; } #vakata-contextmenu { display:block; visibility:hidden; left:0; top:-200px; position:absolute; margin:0; padding:0; min-width:180px; background:#ebebeb; border:1px solid silver; z-index:10000; *width:180px; } #vakata-contextmenu ul { min-width:180px; *width:180px; } #vakata-contextmenu ul, #vakata-contextmenu li { margin:0; padding:0; list-style-type:none; display:block; } #vakata-contextmenu li { line-height:20px; min-height:20px; position:relative; padding:0px; } #vakata-contextmenu li a { padding:1px 6px; line-height:17px; display:block; text-decoration:none; margin:1px 1px 0 1px; } #vakata-contextmenu li ins { float:left; width:16px; height:16px; text-decoration:none; margin-right:2px; } #vakata-contextmenu li a:hover, #vakata-contextmenu li.vakata-hover > a { background:gray; color:white; } #vakata-contextmenu li ul { display:none; position:absolute; top:-2px; left:100%; background:#ebebeb; border:1px solid gray; } #vakata-contextmenu .right { right:100%; left:auto; } #vakata-contextmenu .bottom { bottom:-1px; top:auto; } #vakata-contextmenu li.vakata-separator { min-height:0; height:1px; line-height:1px; font-size:1px; overflow:hidden; margin:0 2px; background:silver; /* border-top:1px solid #fefefe; */ padding:0; } </style><style type="text/css" id="jstree-stylesheet">.jstree ul, .jstree li { display:block; margin:0 0 0 0; padding:0 0 0 0; list-style-type:none; } .jstree li { display:block; min-height:18px; line-height:18px; white-space:nowrap; margin-left:18px; min-width:18px; } .jstree-rtl li { margin-left:0; margin-right:18px; } .jstree > ul > li { margin-left:0px; } .jstree-rtl > ul > li { margin-right:0px; } .jstree ins { display:inline-block; text-decoration:none; width:18px; height:18px; margin:0 0 0 0; padding:0; } .jstree a { display:inline-block; line-height:16px; height:16px; color:black; white-space:nowrap; text-decoration:none; padding:1px 2px; margin:0; } .jstree a:focus { outline: none; } .jstree a > ins { height:16px; width:16px; } .jstree a > .jstree-icon { margin-right:3px; } .jstree-rtl a > .jstree-icon { margin-left:3px; margin-right:0; } li.jstree-open > ul { display:block; } li.jstree-closed > ul { display:none; } #vakata-dragged ins { display:block; text-decoration:none; width:16px; height:16px; margin:0 0 0 0; padding:0; position:absolute; top:4px; left:4px;  -moz-border-radius:4px; border-radius:4px; -webkit-border-radius:4px; } #vakata-dragged .jstree-ok { background:green; } #vakata-dragged .jstree-invalid { background:red; } #jstree-marker { padding:0; margin:0; font-size:12px; overflow:hidden; height:12px; width:8px; position:absolute; top:-30px; z-index:10001; background-repeat:no-repeat; display:none; background-color:transparent; text-shadow:1px 1px 1px white; color:black; line-height:10px; } #jstree-marker-line { padding:0; margin:0; line-height:0%; font-size:1px; overflow:hidden; height:1px; width:100px; position:absolute; top:-30px; z-index:10000; background-repeat:no-repeat; display:none; background-color:#456c43;  cursor:pointer; border:1px solid #eeeeee; border-left:0; -moz-box-shadow: 0px 0px 2px #666; -webkit-box-shadow: 0px 0px 2px #666; box-shadow: 0px 0px 2px #666;  -moz-border-radius:1px; border-radius:1px; -webkit-border-radius:1px; }.jstree .jstree-real-checkbox { display:none; } .jstree-themeroller .ui-icon { overflow:visible; } .jstree-themeroller a { padding:0 2px; } .jstree-themeroller .jstree-no-icon { display:none; }.jstree .jstree-wholerow-real { position:relative; z-index:1; } .jstree .jstree-wholerow-real li { cursor:pointer; } .jstree .jstree-wholerow-real a { border-left-color:transparent !important; border-right-color:transparent !important; } .jstree .jstree-wholerow { position:relative; z-index:0; height:0; } .jstree .jstree-wholerow ul, .jstree .jstree-wholerow li { width:100%; } .jstree .jstree-wholerow, .jstree .jstree-wholerow ul, .jstree .jstree-wholerow li, .jstree .jstree-wholerow a { margin:0 !important; padding:0 !important; } .jstree .jstree-wholerow, .jstree .jstree-wholerow ul, .jstree .jstree-wholerow li { background:transparent !important; }.jstree .jstree-wholerow ins, .jstree .jstree-wholerow span, .jstree .jstree-wholerow input { display:none !important; }.jstree .jstree-wholerow a, .jstree .jstree-wholerow a:hover { text-indent:-9999px; !important; width:100%; padding:0 !important; border-right-width:0px !important; border-left-width:0px !important; } .jstree .jstree-wholerow-span { position:absolute; left:0; margin:0px; padding:0; height:18px; border-width:0; padding:0; z-index:0; }</style></head>
+
+<body style="">
+
+<!-- 머리부분 시작 -->
+<div class="header_box">
+	<div class="head">
+		<a href="/sch/student/main.do" style="display:inline-block; margin:7px 0;">
+			<img src="/Users/aronlee/Documents/mymy/img/header_sub_logo.png" alt="DGIST">
+		</a>
+		<p class="form-inline">
+			<label for="searchLanguageView" style="vertical-align: middle; font-size: 1.5em;">언어선택</label>
+			
+			<select id="searchLanguageView" name="searchLanguageView" class="form-control" tabindex="1"><option key="" value="ko" selected="selected">한국어</option><option key="" value="en">English</option></select>
+			<input type="image" src="/Users/aronlee/Documents/mymy/img/close_btn.png" title="닫기" alt="닫기" onclick="fnClose();">
+		</p>
+	</div>
+	<div class="lnb">
+		<div class="lnb_box">
+			<p class="portal_home">
+				<img src="/Users/aronlee/Documents/mymy/img/ico_mem.jpg" alt="로그인 이미지">
+				<span>이민석</span>
+			</p>
+			<ul>
+				<li>
+					<a href="/sch/student/main.do">
+						<img src="/Users/aronlee/Documents/mymy/img/ico_home.png" alt="포털 홈" title="포털 홈">
+					</a>
+				</li>
+				<li>
+					<a href="javascript:logOut();">
+						<img src="/Users/aronlee/Documents/mymy/img/ico_login.png" alt="로그아웃" title="로그아웃">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- 머리부분 끝 -->
+
+
+
+<!-- <div class="container"> -->
+<div class="wrap">
+<div class="container-fluid">
+
+<!-- 몸통부분 시작 -->
+<div class="row">
+	<div id="topButton" class="hidden-lg" style="margin-bottom:15px; padding-bottom:15px; padding:12px 0 15px 0; text-align:center; border-bottom:1px solid #d9edf7; overflow:hidden;">
+			<span onclick="fnToggleMenu();" style="clear:both; float:left; cursor: pointer; font-size: 25px; margin:13px 0 13px 10px;">
+				<img src="/Users/aronlee/Documents/mymy/img/menu_sub_btn.gif" alt="상단메뉴버튼">
+			</span>
+			<a href="/sch/student/main.do" style="display:inline-block; margin:7px 0;">
+				<img src="/Users/aronlee/Documents/mymy/img/header_sub_logo.png" alt="DGIST">
+			</a>
+			<p style="float:right; margin:15px 10px 0 0;" class="form-inline">
+				<label for="searchLanguageView2" style="float:left; line-height:160%; vertical-align: middle; font-size: 1.5em;">언어선택</label>
+				
+				<select id="searchLanguageView2" name="searchLanguageView2" class="form-control" tabindex="1" style="width:auto !important; float:left; margin:0 5px;"><option key="" value="ko" selected="selected">한국어</option><option key="" value="en">English</option></select>
+				<input type="image" src="/Users/aronlee/Documents/mymy/img/close_btn.png" title="닫기" alt="닫기" onclick="fnClose();">
+			</p>
+	<!-- 		<span onclick="fnToggleMenu();" style="cursor: pointer; font-size: 25px;">상단메뉴버튼</span> -->
+		</div>
+
+	<div id="bodyLeft4lager" class="col-xs-12 col-xs-12 col-xs-12 col-lg-2 toggler no_padding" style="">
+		<!--  <p class="menu_btn"><img src="/Users/aronlee/Documents/mymy/img/menu_btn.gif" alt="상단메뉴버튼"></p>-->
+		<div class="snb_scroll">
+				
+				
+					
+					
+					
+					
+
+						
+							
+							
+							
+								<ul>
+									
+										<li id="depth1BASIC_MYPAGE" class="depth1 fisrt_class"><a href="#" onclick="viewMmenu('BASIC_MYPAGE')">마이페이지</a></li>
+									
+									
+								</ul>
+								<ul id="mmenuBASIC_MYPAGE" mmenuid="BASIC_MYPAGE" class="depth_ul" style="display:none">
+							
+						
+
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/usr/usreShregBodyCorr/index.do">
+									<a href="#" id="STUD_USELF_101" attrmenu_nm="학생신상정정" attrmenu_url="/usr/usreShregBodyCorr/index.do" attrmenu_nav="정보광장>마이페이지>학생신상정정" onclick="goPage('STUD_USELF_101','학생신상정정','/usr/usreShregBodyCorr/index.do','정보광장>마이페이지>학생신상정정')">
+										학생신상정정
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_101" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/usr/usreShregPhtCorr/index.do">
+									<a href="#" id="STUD_USELF_102" attrmenu_nm="사진변경신청" attrmenu_url="/usr/usreShregPhtCorr/index.do" attrmenu_nav="정보광장>마이페이지>사진변경신청" onclick="goPage('STUD_USELF_102','사진변경신청','/usr/usreShregPhtCorr/index.do','정보광장>마이페이지>사진변경신청')">
+										사진변경신청
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_102" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/cmn/cmneUserIntgIdPwdChg/index.do">
+									<a href="#" id="STUD_USELF_901" attrmenu_nm="비밀번호변경" attrmenu_url="/cmn/cmneUserIntgIdPwdChg/index.do" attrmenu_nav="정보광장>마이페이지>비밀번호변경" onclick="goPage('STUD_USELF_901','비밀번호변경','/cmn/cmneUserIntgIdPwdChg/index.do','정보광장>마이페이지>비밀번호변경')">
+										비밀번호변경
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_901" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/rpf/rpfeLabcostStuBacctInst/index.do">
+									<a href="#" id="STUD_RpfeLabcostStuBacctInst2" attrmenu_nm="계좌등록" attrmenu_url="/rpf/rpfeLabcostStuBacctInst/index.do" attrmenu_nav="정보광장>마이페이지>계좌등록" onclick="goPage('STUD_RpfeLabcostStuBacctInst2','계좌등록','/rpf/rpfeLabcostStuBacctInst/index.do','정보광장>마이페이지>계좌등록')">
+										계좌등록
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_RpfeLabcostStuBacctInst2" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+							
+								
+								
+										</ul>
+									</ul>
+								
+							
+							
+							
+								<ul>
+									
+									
+										<li id="depth1BASIC_LSN" class="depth1"><a href="#" onclick="viewMmenu('BASIC_LSN')">수업</a></li>
+									
+								</ul>
+								<ul id="mmenuBASIC_LSN" mmenuid="BASIC_LSN" class="depth_ul" style="display:none">
+							
+						
+
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ucr/ucrqTlsnInq/index.do">
+									<a href="#" id="STUD_USELF_202" attrmenu_nm="수강과목조회" attrmenu_url="/ucr/ucrqTlsnInq/index.do" attrmenu_nav="정보광장>수업>수강과목조회" onclick="goPage('STUD_USELF_202','수강과목조회','/ucr/ucrqTlsnInq/index.do','정보광장>수업>수강과목조회')">
+										수강과목조회
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_202" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ucr/ucrqStudtTmTbl/index.do">
+									<a href="#" id="STUD_USELF_203" attrmenu_nm="시간표조회" attrmenu_url="/ucr/ucrqStudtTmTbl/index.do" attrmenu_nav="정보광장>수업>시간표조회" onclick="goPage('STUD_USELF_203','시간표조회','/ucr/ucrqStudtTmTbl/index.do','정보광장>수업>시간표조회')">
+										시간표조회
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_203" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ucr/ucrrStudtLsnTmTbl/index.do">
+									<a href="#" id="STUD_USELF_204" attrmenu_nm="수강시간표출력" attrmenu_url="/ucr/ucrrStudtLsnTmTbl/index.do" attrmenu_nav="정보광장>수업>수강시간표출력" onclick="goPage('STUD_USELF_204','수강시간표출력','/ucr/ucrrStudtLsnTmTbl/index.do','정보광장>수업>수강시간표출력')">
+										수강시간표출력
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_204" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ucr/ucreTlsnGvupAply/index.do">
+									<a href="#" id="STUD_USELF_205" attrmenu_nm="수강포기신청" attrmenu_url="/ucr/ucreTlsnGvupAply/index.do" attrmenu_nav="정보광장>수업>수강포기신청" onclick="goPage('STUD_USELF_205','수강포기신청','/ucr/ucreTlsnGvupAply/index.do','정보광장>수업>수강포기신청')">
+										수강포기신청
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_205" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ucr/ucrqSkspLtInqStudt/index.do">
+									<a href="#" id="STUD_USELF_206" attrmenu_nm="휴보강조회" attrmenu_url="/ucr/ucrqSkspLtInqStudt/index.do" attrmenu_nav="정보광장>수업>휴보강조회" onclick="goPage('STUD_USELF_206','휴보강조회','/ucr/ucrqSkspLtInqStudt/index.do','정보광장>수업>휴보강조회')">
+										휴보강조회
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_206" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ucr/ucrePntDetmExamAply/index.do">
+									<a href="#" id="STUD_USELF_211" attrmenu_nm="학점인정시험신청" attrmenu_url="/ucr/ucrePntDetmExamAply/index.do" attrmenu_nav="정보광장>수업>학점인정시험신청" onclick="goPage('STUD_USELF_211','학점인정시험신청','/ucr/ucrePntDetmExamAply/index.do','정보광장>수업>학점인정시험신청')">
+										학점인정시험신청
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_211" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ucr/ucreTlsnCdshrAplyMngt/index.do">
+									<a href="#" id="STUD_USELF_209" attrmenu_nm="코드쉐어/URP/대학원과목 사전신청" attrmenu_url="/ucr/ucreTlsnCdshrAplyMngt/index.do" attrmenu_nav="정보광장>수업>코드쉐어/URP/대학원과목 사전신청" onclick="goPage('STUD_USELF_209','코드쉐어/URP/대학원과목 사전신청','/ucr/ucreTlsnCdshrAplyMngt/index.do','정보광장>수업>코드쉐어/URP/대학원과목 사전신청')">
+										코드쉐어/URP/대학원과목 사전신청
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_209" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ute/uteqExamTmTblInq/index.do">
+									<a href="#" id="STUD_USELF_1001" attrmenu_nm="시험시간표조회" attrmenu_url="/ute/uteqExamTmTblInq/index.do" attrmenu_nav="정보광장>수업>시험시간표조회" onclick="goPage('STUD_USELF_1001','시험시간표조회','/ute/uteqExamTmTblInq/index.do','정보광장>수업>시험시간표조회')">
+										시험시간표조회
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_1001" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ucr/ucreLtApprSurveyInvest/index.do">
+									<a href="#" id="BASIC_LSN_305" attrmenu_nm="강의평가(만족도)" attrmenu_url="/ucr/ucreLtApprSurveyInvest/index.do" attrmenu_nav="정보광장>수업>강의평가(만족도)" onclick="goPage('BASIC_LSN_305','강의평가(만족도)','/ucr/ucreLtApprSurveyInvest/index.do','정보광장>수업>강의평가(만족도)')">
+										강의평가(만족도)
+									</a>
+								</li>
+							
+							<ul id="smenuBASIC_LSN_305" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ucr/ucreMiddLtApprSurveyInvest/index.do">
+									<a href="#" id="BASIC_LSN_MIDLTAPPR" attrmenu_nm="중간강의성찰" attrmenu_url="/ucr/ucreMiddLtApprSurveyInvest/index.do" attrmenu_nav="정보광장>수업>중간강의성찰" onclick="goPage('BASIC_LSN_MIDLTAPPR','중간강의성찰','/ucr/ucreMiddLtApprSurveyInvest/index.do','정보광장>수업>중간강의성찰')">
+										중간강의성찰
+									</a>
+								</li>
+							
+							<ul id="smenuBASIC_LSN_MIDLTAPPR" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+							
+								
+								
+										</ul>
+									</ul>
+								
+							
+							
+							
+								<ul>
+									
+									
+										<li id="depth1BASIC_MRKS" class="depth1"><a href="#" onclick="viewMmenu('BASIC_MRKS')">성적</a></li>
+									
+								</ul>
+								<ul id="mmenuBASIC_MRKS" mmenuid="BASIC_MRKS" class="depth_ul" style="display:none">
+							
+						
+
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ugd/ugdqMrksInq/index.do">
+									<a href="#" id="STUD_USELF_301" attrmenu_nm="학기성적조회" attrmenu_url="/ugd/ugdqMrksInq/index.do" attrmenu_nav="정보광장>성적>학기성적조회" onclick="goPage('STUD_USELF_301','학기성적조회','/ugd/ugdqMrksInq/index.do','정보광장>성적>학기성적조회')">
+										학기성적조회
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_301" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ugd/ugdqMrksTotInq/index.do">
+									<a href="#" id="STUD_USELF_302" attrmenu_nm="전체성적조회" attrmenu_url="/ugd/ugdqMrksTotInq/index.do" attrmenu_nav="정보광장>성적>전체성적조회" onclick="goPage('STUD_USELF_302','전체성적조회','/ugd/ugdqMrksTotInq/index.do','정보광장>성적>전체성적조회')">
+										전체성적조회
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_302" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+							
+								
+								
+										</ul>
+									</ul>
+								
+							
+							
+							
+								<ul>
+									
+									
+										<li id="depth1BASIC_SCH_LIF" class="depth1"><a href="#" onclick="viewMmenu('BASIC_SCH_LIF')">학교생활</a></li>
+									
+								</ul>
+								<ul id="mmenuBASIC_SCH_LIF" mmenuid="BASIC_SCH_LIF" class="depth_ul" style="display:none">
+							
+						
+
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/usr/usreIdcdIssuAply/index.do">
+									<a href="#" id="BASIC_SCH_LIF_UsrIdcdAply" attrmenu_nm="학생증발급신청" attrmenu_url="/usr/usreIdcdIssuAply/index.do" attrmenu_nav="정보광장>학교생활>학생증발급신청" onclick="goPage('BASIC_SCH_LIF_UsrIdcdAply','학생증발급신청','/usr/usreIdcdIssuAply/index.do','정보광장>학교생활>학생증발급신청')">
+										학생증발급신청
+									</a>
+								</li>
+							
+							<ul id="smenuBASIC_SCH_LIF_UsrIdcdAply" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/usr/usreSchgAplyStud/index.do">
+									<a href="#" id="STUD_USELF_103" attrmenu_nm="학적변동신청" attrmenu_url="/usr/usreSchgAplyStud/index.do" attrmenu_nav="정보광장>학교생활>학적변동신청" onclick="goPage('STUD_USELF_103','학적변동신청','/usr/usreSchgAplyStud/index.do','정보광장>학교생활>학적변동신청')">
+										학적변동신청
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_103" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/usd/usdeCnslReg/index.do">
+									<a href="#" id="STUD_USELF_902" attrmenu_nm="심리상담 및 심리검사 신청" attrmenu_url="/usd/usdeCnslReg/index.do" attrmenu_nav="정보광장>학교생활>심리상담 및 심리검사 신청" onclick="goPage('STUD_USELF_902','심리상담 및 심리검사 신청','/usd/usdeCnslReg/index.do','정보광장>학교생활>심리상담 및 심리검사 신청')">
+										심리상담 및 심리검사 신청
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_902" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/rpf/rpfeRechParticiDcdfpr/index.do">
+									<a href="#" id="STUD_RpfeRechParticiDcdfpr" attrmenu_nm="연구수행참여확인" attrmenu_url="/rpf/rpfeRechParticiDcdfpr/index.do" attrmenu_nav="정보광장>학교생활>연구수행참여확인" onclick="goPage('STUD_RpfeRechParticiDcdfpr','연구수행참여확인','/rpf/rpfeRechParticiDcdfpr/index.do','정보광장>학교생활>연구수행참여확인')">
+										연구수행참여확인
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_RpfeRechParticiDcdfpr" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/usd/usdeArsdRoomAplyStud/index.do">
+									<a href="#" id="STUD_DSELF_903" attrmenu_nm="생활관신청" attrmenu_url="/usd/usdeArsdRoomAplyStud/index.do" attrmenu_nav="정보광장>학교생활>생활관신청" onclick="goPage('STUD_DSELF_903','생활관신청','/usd/usdeArsdRoomAplyStud/index.do','정보광장>학교생활>생활관신청')">
+										생활관신청
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_DSELF_903" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/uet/uetqPassFcQry/index.do">
+									<a href="#" id="STUD_USELF_52" attrmenu_nm="학위연계 합격자조회" attrmenu_url="/uet/uetqPassFcQry/index.do" attrmenu_nav="정보광장>학교생활>학위연계 합격자조회" onclick="goPage('STUD_USELF_52','학위연계 합격자조회','/uet/uetqPassFcQry/index.do','정보광장>학교생활>학위연계 합격자조회')">
+										학위연계 합격자조회
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_52" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/usd/usdeCabAply/index.do">
+									<a href="#" id="BASIC_SCH_LIF_UsdeCabAply" attrmenu_nm="편의시설신청" attrmenu_url="/usd/usdeCabAply/index.do" attrmenu_nav="정보광장>학교생활>편의시설신청" onclick="goPage('BASIC_SCH_LIF_UsdeCabAply','편의시설신청','/usd/usdeCabAply/index.do','정보광장>학교생활>편의시설신청')">
+										편의시설신청
+									</a>
+								</li>
+							
+							<ul id="smenuBASIC_SCH_LIF_UsdeCabAply" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/uss/usseStudOtCampActAply/index.do">
+									<a href="#" id="UsseStudOtCampActAply" attrmenu_nm="학생과외활동신청" attrmenu_url="/uss/usseStudOtCampActAply/index.do" attrmenu_nav="정보광장>학교생활>학생과외활동신청" onclick="goPage('UsseStudOtCampActAply','학생과외활동신청','/uss/usseStudOtCampActAply/index.do','정보광장>학교생활>학생과외활동신청')">
+										학생과외활동신청
+									</a>
+								</li>
+							
+							<ul id="smenuUsseStudOtCampActAply" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/uss/usseIncampScalAply/index.do">
+									<a href="#" id="UsseIncampScalAply" attrmenu_nm="교내장학생신청" attrmenu_url="/uss/usseIncampScalAply/index.do" attrmenu_nav="정보광장>학교생활>교내장학생신청" onclick="goPage('UsseIncampScalAply','교내장학생신청','/uss/usseIncampScalAply/index.do','정보광장>학교생활>교내장학생신청')">
+										교내장학생신청
+									</a>
+								</li>
+							
+							<ul id="smenuUsseIncampScalAply" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/uss/usseLaborScalAply/index.do">
+									<a href="#" id="BASIC_SCH_LIF_940" attrmenu_nm="근로장학생신청" attrmenu_url="/uss/usseLaborScalAply/index.do" attrmenu_nav="정보광장>학교생활>근로장학생신청" onclick="goPage('BASIC_SCH_LIF_940','근로장학생신청','/uss/usseLaborScalAply/index.do','정보광장>학교생활>근로장학생신청')">
+										근로장학생신청
+									</a>
+								</li>
+							
+							<ul id="smenuBASIC_SCH_LIF_940" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/uss/usseLaborScalAttdMngt/index.do">
+									<a href="#" id="BASIC_SCH_LIF_945" attrmenu_nm="근로장학생 출근부관리" attrmenu_url="/uss/usseLaborScalAttdMngt/index.do" attrmenu_nav="정보광장>학교생활>근로장학생 출근부관리" onclick="goPage('BASIC_SCH_LIF_945','근로장학생 출근부관리','/uss/usseLaborScalAttdMngt/index.do','정보광장>학교생활>근로장학생 출근부관리')">
+										근로장학생 출근부관리
+									</a>
+								</li>
+							
+							<ul id="smenuBASIC_SCH_LIF_945" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/uss/ussqScafeeInq/index.do">
+									<a href="#" id="BASIC_SCH_LIF_930" attrmenu_nm="장학금지급현황" attrmenu_url="/uss/ussqScafeeInq/index.do" attrmenu_nav="정보광장>학교생활>장학금지급현황" onclick="goPage('BASIC_SCH_LIF_930','장학금지급현황','/uss/ussqScafeeInq/index.do','정보광장>학교생활>장학금지급현황')">
+										장학금지급현황
+									</a>
+								</li>
+							
+							<ul id="smenuBASIC_SCH_LIF_930" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/usd/usdeFcltTaAply/index.do">
+									<a href="#" id="BASIC_SCH_LIF_960" attrmenu_nm="학부TA신청" attrmenu_url="/usd/usdeFcltTaAply/index.do" attrmenu_nav="정보광장>학교생활>학부TA신청" onclick="goPage('BASIC_SCH_LIF_960','학부TA신청','/usd/usdeFcltTaAply/index.do','정보광장>학교생활>학부TA신청')">
+										학부TA신청
+									</a>
+								</li>
+							
+							<ul id="smenuBASIC_SCH_LIF_960" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/usd/usdeFcltTaPbsvDiary/index.do">
+									<a href="#" id="BASIC_SCH_LIF_961" attrmenu_nm="학부TA복무일지" attrmenu_url="/usd/usdeFcltTaPbsvDiary/index.do" attrmenu_nav="정보광장>학교생활>학부TA복무일지" onclick="goPage('BASIC_SCH_LIF_961','학부TA복무일지','/usd/usdeFcltTaPbsvDiary/index.do','정보광장>학교생활>학부TA복무일지')">
+										학부TA복무일지
+									</a>
+								</li>
+							
+							<ul id="smenuBASIC_SCH_LIF_961" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/cmn/cmneRsrvAplyMngt/index.do">
+									<a href="#" id="STUD_DSELF_990" attrmenu_nm="설비예약 신청" attrmenu_url="/cmn/cmneRsrvAplyMngt/index.do" attrmenu_nav="정보광장>학교생활>설비예약 신청" onclick="goPage('STUD_DSELF_990','설비예약 신청','/cmn/cmneRsrvAplyMngt/index.do','정보광장>학교생활>설비예약 신청')">
+										설비예약 신청
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_DSELF_990" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/cmn/cmneRsrvCfm/index.do">
+									<a href="#" id="STUD_DSELF_991" attrmenu_nm="설비예약 확인" attrmenu_url="/cmn/cmneRsrvCfm/index.do" attrmenu_nav="정보광장>학교생활>설비예약 확인" onclick="goPage('STUD_DSELF_991','설비예약 확인','/cmn/cmneRsrvCfm/index.do','정보광장>학교생활>설비예약 확인')">
+										설비예약 확인
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_DSELF_991" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/rpf/rpfeBstrAply/index.do">
+									<a href="#" id="STUD_DSELF_A205" attrmenu_nm="학생출장신청" attrmenu_url="/rpf/rpfeBstrAply/index.do" attrmenu_nav="정보광장>학교생활>학생출장신청" onclick="goPage('STUD_DSELF_A205','학생출장신청','/rpf/rpfeBstrAply/index.do','정보광장>학교생활>학생출장신청')">
+										학생출장신청
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_DSELF_A205" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/cmn/cmneRsrvAplyHealthMngt/index.do">
+									<a href="#" id="STUD_DSELF_992" attrmenu_nm="건강관리실 예약신청" attrmenu_url="/cmn/cmneRsrvAplyHealthMngt/index.do" attrmenu_nav="정보광장>학교생활>건강관리실 예약신청" onclick="goPage('STUD_DSELF_992','건강관리실 예약신청','/cmn/cmneRsrvAplyHealthMngt/index.do','정보광장>학교생활>건강관리실 예약신청')">
+										건강관리실 예약신청
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_DSELF_992" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/usr/usreShregChgAply/index.do">
+									<a href="#" id="STUD_NSELF_902" attrmenu_nm="학적기재정보변경신청" attrmenu_url="/usr/usreShregChgAply/index.do" attrmenu_nav="정보광장>학교생활>학적기재정보변경신청" onclick="goPage('STUD_NSELF_902','학적기재정보변경신청','/usr/usreShregChgAply/index.do','정보광장>학교생활>학적기재정보변경신청')">
+										학적기재정보변경신청
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_NSELF_902" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/rpf/rpfqLabcostCrcndForStu/index.do">
+									<a href="#" id="STUD_RpfqLabcostCrcndForStu2" attrmenu_nm="(구)인건비지급현황" attrmenu_url="/rpf/rpfqLabcostCrcndForStu/index.do" attrmenu_nav="정보광장>학교생활>(구)인건비지급현황" onclick="goPage('STUD_RpfqLabcostCrcndForStu2','(구)인건비지급현황','/rpf/rpfqLabcostCrcndForStu/index.do','정보광장>학교생활>(구)인건비지급현황')">
+										(구)인건비지급현황
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_RpfqLabcostCrcndForStu2" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/rpf/rechPrjtParticiCfm/index.do">
+									<a href="#" id="STUD_RechPrjtParticiCfm" attrmenu_nm="(구)연구과제참여 확인" attrmenu_url="/rpf/rechPrjtParticiCfm/index.do" attrmenu_nav="정보광장>학교생활>(구)연구과제참여 확인" onclick="goPage('STUD_RechPrjtParticiCfm','(구)연구과제참여 확인','/rpf/rechPrjtParticiCfm/index.do','정보광장>학교생활>(구)연구과제참여 확인')">
+										(구)연구과제참여 확인
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_RechPrjtParticiCfm" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+							
+								
+								
+										</ul>
+									</ul>
+								
+							
+							
+							
+								<ul>
+									
+									
+										<li id="depth1BASIC_UGT" class="depth1"><a href="#" onclick="viewMmenu('BASIC_UGT')">졸업관리</a></li>
+									
+								</ul>
+								<ul id="mmenuBASIC_UGT" mmenuid="BASIC_UGT" class="depth_ul" style="display:none">
+							
+						
+
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ugt/ugteSimulateReal/index.do">
+									<a href="#" id="STUD_SELF_601" attrmenu_nm="졸업신청" attrmenu_url="/ugt/ugteSimulateReal/index.do" attrmenu_nav="정보광장>졸업관리>졸업신청" onclick="goPage('STUD_SELF_601','졸업신청','/ugt/ugteSimulateReal/index.do','정보광장>졸업관리>졸업신청')">
+										졸업신청
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_SELF_601" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ugt/ugteThesisJudgSubm/index.do">
+									<a href="#" id="STUD_THESIS_JUDG" attrmenu_nm="학위논문 심사자료 제출" attrmenu_url="/ugt/ugteThesisJudgSubm/index.do" attrmenu_nav="정보광장>졸업관리>학위논문 심사자료 제출" onclick="goPage('STUD_THESIS_JUDG','학위논문 심사자료 제출','/ugt/ugteThesisJudgSubm/index.do','정보광장>졸업관리>학위논문 심사자료 제출')">
+										학위논문 심사자료 제출
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_THESIS_JUDG" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ugt/ugtrSimuHis/index.do">
+									<a href="#" id="STUD_SELF_602" attrmenu_nm="졸업시뮬레이션" attrmenu_url="/ugt/ugtrSimuHis/index.do" attrmenu_nav="정보광장>졸업관리>졸업시뮬레이션" onclick="goPage('STUD_SELF_602','졸업시뮬레이션','/ugt/ugtrSimuHis/index.do','정보광장>졸업관리>졸업시뮬레이션')">
+										졸업시뮬레이션
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_SELF_602" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ugt/ugtrFilterSearch/index.do">
+									<a href="#" id="STUD_SELF_604" attrmenu_nm="졸업이수요건조회" attrmenu_url="/ugt/ugtrFilterSearch/index.do" attrmenu_nav="정보광장>졸업관리>졸업이수요건조회" onclick="goPage('STUD_SELF_604','졸업이수요건조회','/ugt/ugtrFilterSearch/index.do','정보광장>졸업관리>졸업이수요건조회')">
+										졸업이수요건조회
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_SELF_604" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ugt/ugtrSbjtTable/index.do">
+									<a href="#" id="STUD_USELF_603" attrmenu_nm="교과과정표조회" attrmenu_url="/ugt/ugtrSbjtTable/index.do" attrmenu_nav="정보광장>졸업관리>교과과정표조회" onclick="goPage('STUD_USELF_603','교과과정표조회','/ugt/ugtrSbjtTable/index.do','정보광장>졸업관리>교과과정표조회')">
+										교과과정표조회
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_603" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+							
+								
+								
+										</ul>
+									</ul>
+								
+							
+							
+							
+								<ul>
+									
+									
+										<li id="depth1BASIC_MNTR" class="depth1"><a href="#" onclick="viewMmenu('BASIC_MNTR')">멘토링</a></li>
+									
+								</ul>
+								<ul id="mmenuBASIC_MNTR" mmenuid="BASIC_MNTR" class="depth_ul" style="display:none">
+							
+						
+
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/usr/usreRouteMntrAply/index.do">
+									<a href="#" id="STUD_USELF_112" attrmenu_nm="멘토리얼세미나신청" attrmenu_url="/usr/usreRouteMntrAply/index.do" attrmenu_nav="정보광장>멘토링>멘토리얼세미나신청" onclick="goPage('STUD_USELF_112','멘토리얼세미나신청','/usr/usreRouteMntrAply/index.do','정보광장>멘토링>멘토리얼세미나신청')">
+										멘토리얼세미나신청
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_112" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/usr/usreMentorConsentStd/index.do">
+									<a href="#" id="STUD_USELF_113" attrmenu_nm="정보제공동의서" attrmenu_url="/usr/usreMentorConsentStd/index.do" attrmenu_nav="정보광장>멘토링>정보제공동의서" onclick="goPage('STUD_USELF_113','정보제공동의서','/usr/usreMentorConsentStd/index.do','정보광장>멘토링>정보제공동의서')">
+										정보제공동의서
+									</a>
+								</li>
+							
+							<ul id="smenuSTUD_USELF_113" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+							
+								
+								
+										</ul>
+									</ul>
+								
+							
+							
+							
+								<ul>
+									
+									
+										<li id="depth1BASIC_SURVEY" class="depth1"><a href="#" onclick="viewMmenu('BASIC_SURVEY')">설문조사</a></li>
+									
+								</ul>
+								<ul id="mmenuBASIC_SURVEY" mmenuid="BASIC_SURVEY" class="depth_ul" style="display:none">
+							
+						
+
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/cmn/cmnePollMyAnswerMngt/index.do">
+									<a href="#" id="CmneStudPollMyAnswerMngt" attrmenu_nm="내설문함" attrmenu_url="/cmn/cmnePollMyAnswerMngt/index.do" attrmenu_nav="정보광장>설문조사>내설문함" onclick="goPage('CmneStudPollMyAnswerMngt','내설문함','/cmn/cmnePollMyAnswerMngt/index.do','정보광장>설문조사>내설문함')">
+										내설문함
+									</a>
+								</li>
+							
+							<ul id="smenuCmneStudPollMyAnswerMngt" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/cmn/cmnePollAnswerMngt/index.do">
+									<a href="#" id="CmneStudPollAnswerMngt" attrmenu_nm="설문참여하기" attrmenu_url="/cmn/cmnePollAnswerMngt/index.do" attrmenu_nav="정보광장>설문조사>설문참여하기" onclick="goPage('CmneStudPollAnswerMngt','설문참여하기','/cmn/cmnePollAnswerMngt/index.do','정보광장>설문조사>설문참여하기')">
+										설문참여하기
+									</a>
+								</li>
+							
+							<ul id="smenuCmneStudPollAnswerMngt" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+							
+								
+								
+										</ul>
+									</ul>
+								
+							
+							
+							
+								<ul>
+									
+									
+										<li id="depth1BASIC_RND_EQIP" class="depth1"><a href="#" onclick="viewMmenu('BASIC_RND_EQIP')">연구장비</a></li>
+									
+								</ul>
+								<ul id="mmenuBASIC_RND_EQIP" mmenuid="BASIC_RND_EQIP" class="depth_ul" style="display:none">
+							
+						
+
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/rem/remeClaCtent/index.do">
+									<a href="#" id="RemeClaCtentSch" attrmenu_nm="장비사용청구내역" attrmenu_url="/rem/remeClaCtent/index.do" attrmenu_nav="정보광장>연구장비>장비사용청구내역" onclick="goPage('RemeClaCtentSch','장비사용청구내역','/rem/remeClaCtent/index.do','정보광장>연구장비>장비사용청구내역')">
+										장비사용청구내역
+									</a>
+								</li>
+							
+							<ul id="smenuRemeClaCtentSch" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+							
+								
+								
+										</ul>
+									</ul>
+								
+							
+							
+							
+								<ul>
+									
+									
+										<li id="depth1BASIC_URS" class="depth1"><a href="#" onclick="viewMmenu('BASIC_URS')">납입금</a></li>
+									
+								</ul>
+								<ul id="mmenuBASIC_URS" mmenuid="BASIC_URS" class="depth_ul" style="display:none">
+							
+						
+
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/urs/urseRegObjCfm/index.do">
+									<a href="#" id="UrseRegObjCfm" attrmenu_nm="고지내역조회" attrmenu_url="/urs/urseRegObjCfm/index.do" attrmenu_nav="정보광장>납입금>고지내역조회" onclick="goPage('UrseRegObjCfm','고지내역조회','/urs/urseRegObjCfm/index.do','정보광장>납입금>고지내역조회')">
+										고지내역조회
+									</a>
+								</li>
+							
+							<ul id="smenuUrseRegObjCfm" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/urs/ursqDmppPrn/index.do">
+									<a href="#" id="UrsqDmppPrn" attrmenu_nm="고지확인" attrmenu_url="/urs/ursqDmppPrn/index.do" attrmenu_nav="정보광장>납입금>고지확인" onclick="goPage('UrsqDmppPrn','고지확인','/urs/ursqDmppPrn/index.do','정보광장>납입금>고지확인')">
+										고지확인
+									</a>
+								</li>
+							
+							<ul id="smenuUrsqDmppPrn" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+							
+								
+								
+										</ul>
+									</ul>
+								
+							
+							
+							
+								<ul>
+									
+									
+										<li id="depth1BASIC_PURC_UNV" class="depth1"><a href="#" onclick="viewMmenu('BASIC_PURC_UNV')">UGRP구매</a></li>
+									
+								</ul>
+								<ul id="mmenuBASIC_PURC_UNV" mmenuid="BASIC_PURC_UNV" class="depth_ul" style="display:none">
+							
+						
+
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/apc/apceScPurcAplyStudUnv/index.do">
+									<a href="#" id="ApceScPurcAplyStudUnv" attrmenu_nm="UGRP구매" attrmenu_url="/apc/apceScPurcAplyStudUnv/index.do" attrmenu_nav="정보광장>UGRP구매>UGRP구매" onclick="goPage('ApceScPurcAplyStudUnv','UGRP구매','/apc/apceScPurcAplyStudUnv/index.do','정보광장>UGRP구매>UGRP구매')">
+										UGRP구매
+									</a>
+								</li>
+							
+							<ul id="smenuApceScPurcAplyStudUnv" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+							
+								
+								
+										</ul>
+									</ul>
+								
+							
+							
+							
+								<ul>
+									
+									
+										<li id="depth1BASIC_UGRP" class="depth1"><a href="#" onclick="viewMmenu('BASIC_UGRP')">UGRP관리</a></li>
+									
+								</ul>
+								<ul id="mmenuBASIC_UGRP" mmenuid="BASIC_UGRP" class="depth_ul" style="display:none">
+							
+						
+
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ucr/ucrqUgrpPrjtInq/index.do">
+									<a href="#" id="UcrqUgrpPrjtInq" attrmenu_nm="UGRP과제조회" attrmenu_url="/ucr/ucrqUgrpPrjtInq/index.do" attrmenu_nav="정보광장>UGRP관리>UGRP과제조회" onclick="goPage('UcrqUgrpPrjtInq','UGRP과제조회','/ucr/ucrqUgrpPrjtInq/index.do','정보광장>UGRP관리>UGRP과제조회')">
+										UGRP과제조회
+									</a>
+								</li>
+							
+							<ul id="smenuUcrqUgrpPrjtInq" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ucr/ucreUgrpRptSubm/index.do">
+									<a href="#" id="UcreUgrpRptSubm" attrmenu_nm="중간/최종보고서제출" attrmenu_url="/ucr/ucreUgrpRptSubm/index.do" attrmenu_nav="정보광장>UGRP관리>중간/최종보고서제출" onclick="goPage('UcreUgrpRptSubm','중간/최종보고서제출','/ucr/ucreUgrpRptSubm/index.do','정보광장>UGRP관리>중간/최종보고서제출')">
+										중간/최종보고서제출
+									</a>
+								</li>
+							
+							<ul id="smenuUcreUgrpRptSubm" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+							
+								
+								
+										</ul>
+									</ul>
+								
+							
+							
+							
+								<ul>
+									
+									
+										<li id="depth1BASIC_OSEA" class="depth1"><a href="#" onclick="viewMmenu('BASIC_OSEA')">해외교류</a></li>
+									
+								</ul>
+								<ul id="mmenuBASIC_OSEA" mmenuid="BASIC_OSEA" class="depth_ul" style="display:none">
+							
+						
+
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ucr/ucreOseaPgAply/index.do">
+									<a href="#" id="UcreOseaPgAplyStud" attrmenu_nm="FGLP 신청" attrmenu_url="/ucr/ucreOseaPgAply/index.do" attrmenu_nav="정보광장>해외교류>FGLP 신청" onclick="goPage('UcreOseaPgAplyStud','FGLP 신청','/ucr/ucreOseaPgAply/index.do','정보광장>해외교류>FGLP 신청')">
+										FGLP 신청
+									</a>
+								</li>
+							
+							<ul id="smenuUcreOseaPgAplyStud" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ucr/ucreOseaWtotRptSubm/index.do">
+									<a href="#" id="UcreOseaWtotRptSubmStud" attrmenu_nm="FGLP 서약서/결과보고서" attrmenu_url="/ucr/ucreOseaWtotRptSubm/index.do" attrmenu_nav="정보광장>해외교류>FGLP 서약서/결과보고서" onclick="goPage('UcreOseaWtotRptSubmStud','FGLP 서약서/결과보고서','/ucr/ucreOseaWtotRptSubm/index.do','정보광장>해외교류>FGLP 서약서/결과보고서')">
+										FGLP 서약서/결과보고서
+									</a>
+								</li>
+							
+							<ul id="smenuUcreOseaWtotRptSubmStud" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+
+						
+
+						
+							
+								</ul>
+							
+
+							<!-- 메뉴뎁스 4를 3으로 강제로 올림 -->
+							
+							
+								<li class="depth3" url="/ucr/ucrqOseaPgPraticiHist/index.do">
+									<a href="#" id="UcrqOseaPgPraticiHistStud" attrmenu_nm="글로벌프로그램참여이력조회" attrmenu_url="/ucr/ucrqOseaPgPraticiHist/index.do" attrmenu_nav="정보광장>해외교류>글로벌프로그램참여이력조회" onclick="goPage('UcrqOseaPgPraticiHistStud','글로벌프로그램참여이력조회','/ucr/ucrqOseaPgPraticiHist/index.do','정보광장>해외교류>글로벌프로그램참여이력조회')">
+										글로벌프로그램참여이력조회
+									</a>
+								</li>
+							
+							<ul id="smenuUcrqOseaPgPraticiHistStud" class="depth_ul" style="display:none">
+						
+						
+						
+					
+					
+					
+					
+							</ul>
+						</ul>
+					
+				
+				
+				
+			</div>
+	</div>
+	<div id="bodyCenter" class="col-xs-12 col-sm-12 col-md-12 col-lg-10 no_padding">
+		<div class="container-fluid contant_box nopadding">
+		
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 m_padding">
+<!-- 			<div class="panel panel-info" style="overflow:hidden;"> -->
+
+<!-- 			</div> -->
+		</div>
+		<!-- 학생정보 -->
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 m_padding">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						학생정보
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-3">
+							<p><img id="impStudImage" src="http://my.dgist.ac.kr/sch/schUtil/downloadFile.do?ATFILE_CONN_NO=YuzzWCYQNpMYqgExqXGX8g%3D%3D&amp;ATFILE_SEQ_NO=N3H4XObdANOOJ7XW1E6M9g%3D%3D" width="100%" height="100%" onerror="javascript:onImgError();"></p>
+						</div>
+						<div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-3">
+							<label for="STUD_NO" class="">학번</label>
+							<input type="text" id="STUD_NO" name="STUD_NO" value="202211136" class="form-control" title="학번" alt="학번" readonly="readonly">
+						</div>
+						<div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-3">
+							<label for="STUD_NO" class="">생년월일(성별)</label>
+							
+								
+							
+							
+							<input type="text" id="BIRTH_DT" name="BIRTH_DT" value="2003/02/17(남)" class="form-control" title="생년월일(성별)" alt="생년월일(성별)" readonly="readonly">
+						</div>
+						<div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-3">
+							<label for="KOR_NM" class="">성명(한자)</label>
+							<input type="text" id="KOR_NM" name="KOR_NM" value="이민석" class="form-control" title="성명(한자)" alt="성명(한자)" readonly="readonly">
+						</div>
+						<div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-3">
+							<label for="ENG_NM" class="">성명(영문)</label>
+							<input type="text" id="ENG_NM" name="ENG_NM" value="LEE MINSEOK" class="form-control" title="성명(영문)" alt="성명(영문)" readonly="readonly">
+						</div>
+						<div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-3">
+							<label for="ORGN_CLSF_NM" class="">소속</label>
+							
+								
+							
+							
+							<input type="text" id="ORGN_CLSF_NM" name="ORGN_CLSF_NM" value="대학" class="form-control" title="소속" alt="소속" readonly="readonly">
+						</div>
+						<div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-3">
+							<label for="CORS_NM" class="">과정</label>
+							
+								
+							
+							
+							<input type="text" id="CORS_NM" name="CORS_NM" value="학사" class="form-control" title="과정" alt="과정" readonly="readonly">
+						</div>
+						<div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-3">
+							
+								
+									<label for="PRMT_SHTM" class="">학기차수(학년)</label>
+									<input type="text" id="PRMT_SHTM" name="PRMT_SHTM" value="2(1)" class="form-control" title="학기차수(학년)" alt="학기차수(학년)" readonly="readonly">
+								
+								
+							
+						</div>
+						<div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-3">
+							<label for="SCHG_DCD_NM" class="">학적상태</label>
+							
+								
+							
+							
+							<input type="text" id="SCHG_DCD_NM" name="SCHG_DCD_NM" value="입학" class="form-control" title="학적상태" alt="학적상태" readonly="readonly">
+						</div>
+						<div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-3">
+							<label for="CELL_NO" class="">본인연락처</label>
+							<input type="text" id="CELL_NO" name="CELL_NO" value="010-9707-9686" class="form-control" title="본인연락처" alt="본인연락처" readonly="readonly">
+						</div>
+						<div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-6">
+							<label for="EMAIL" class="">
+								대표이메일
+								
+							</label>
+							
+								<input type="text" id="EMAIL" name="EMAIL" value="minseok.lee@dgist.ac.kr" class="form-control" title="대표이메일" alt="대표이메일" readonly="readonly">
+							
+							
+						</div>
+					</div>
+					<div class="row">
+						
+							
+							
+							
+						
+						
+
+						
+							
+								<div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-4">
+									<label for="GUID_PROF_NM" class="">지도교수(멘토)</label>
+									<input type="text" id="GUID_PROF_NM" name="GUID_PROF_NM" value="이재홍" class="form-control" title="지도교수(멘토)" alt="지도교수(멘토)" readonly="readonly">
+								</div>
+
+
+
+
+								<div class="form-group col-xs-6 col-xs-6 col-sm-4 col-md-4 col-lg-4">
+									<label for="REPS_PROF_NM" class="">학과장</label>
+									<input type="text" id="REPS_PROF_NM" name="REPS_PROF_NM" value="윤지성" class="form-control" title="학과장" alt="학과장" readonly="readonly">
+								</div>
+								<div class="form-group col-xs-6 col-xs-6 col-sm-4 col-md-4 col-lg-4">
+									<label for="THSS_GUID_PROF_NM" class="">논문지도교수</label>
+									<input type="text" id="THSS_GUID_PROF_NM" name="THSS_GUID_PROF_NM" value="" class="form-control" title="논문지도교수" alt="논문지도교수" readonly="readonly">
+								</div>
+							
+							
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		
+
+		<!-- 신청현황 -->
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 m_padding">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">신청현황</h3>
+				</div>
+				<div class="panel-body main_table">
+					<table class="table table-hover table-condensed">
+					<colgroup>
+						<col width="5%">
+						<col width="20%">
+						<col width="55%">
+						<col width="20%">
+					</colgroup>
+
+					<thead>
+						<tr>
+							<th>No.</th>
+							<th>구분</th>
+							<th>신청명</th>
+							<th>진행상태</th>
+						</tr>
+					</thead>
+
+					<tbody>
+					
+						
+							<tr><td colspan="4">
+								등록된 신청정보가 없습니다.
+							</td>
+						
+						
+					
+					</tr></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- 학사일정 -->
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 m_padding">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						학사일정[2022년]
+						
+					</h3>
+				</div>
+				<div class="panel-body main_table" style="height: 300px; overflow-y: scroll;">
+					<table class="table table-hover table-condensed">
+					<colgroup>
+						<col width="50%">
+						<col width="50%">
+					</colgroup>
+
+					<thead>
+						<tr>
+							<th>주요학사일정</th>
+							<th>기간</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						
+						
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											사진변경신청기간
+										
+										
+									</td>
+									<td>2022/06/20 00:00 ~ 2022/12/16 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											학적기본정정기간
+										
+										
+									</td>
+									<td>2022/06/20 00:00 ~ 2022/12/16 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											강의계획서작성기간
+										
+										
+									</td>
+									<td>2022/06/24 09:00 ~ 2022/08/30 16:00</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											개강전(휴복학기간)
+										
+										
+									</td>
+									<td>2022/06/28 09:00 ~ 2022/08/28 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											수강신청기간
+										
+										
+									</td>
+									<td>2022/08/16 09:00 ~ 2022/08/18 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											수업일수(개강일 ~ 1/4)
+										
+										
+									</td>
+									<td>2022/08/29 00:00 ~ 2022/09/26 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											수강변경기간
+										
+										
+									</td>
+									<td>2022/09/05 09:00 ~ 2022/09/08 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											수강포기신청기간
+										
+										
+									</td>
+									<td>2022/09/13 09:00 ~ 2022/09/23 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											수업일수(1/4이후 ~ 2/4)
+										
+										
+									</td>
+									<td>2022/09/27 00:00 ~ 2022/10/24 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											중간강의평가
+										
+										
+									</td>
+									<td>2022/10/10 09:00 ~ 2022/10/14 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											중간고사기간
+										
+										
+									</td>
+									<td>2022/10/17 09:00 ~ 2022/10/21 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											수업일수(2/4이후 ~ 3/4)
+										
+										
+									</td>
+									<td>2022/10/26 00:00 ~ 2022/11/21 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											수업일수(3/4이후 ~ 4/4)
+										
+										
+									</td>
+									<td>2022/11/22 00:00 ~ 2022/12/16 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											강의평가기간
+										
+										
+									</td>
+									<td>2022/12/05 09:00 ~ 2022/12/09 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											강의평가기간
+										
+										
+									</td>
+									<td>2022/12/05 09:00 ~ 2022/12/09 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											기말고사기간
+										
+										
+									</td>
+									<td>2022/12/12 09:00 ~ 2022/12/16 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											성적입력기간
+										
+										
+									</td>
+									<td>2022/12/15 09:00 ~ 2022/12/23 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											성적확인기간
+										
+										
+									</td>
+									<td>2022/12/26 09:00 ~ 2022/12/28 23:59</td>
+								</tr>
+							
+							
+							
+								<tr>
+									<td class="align_l">
+										
+											미완성적처리기간
+										
+										
+									</td>
+									<td>2023/01/03 09:00 ~ 2023/01/13 23:59</td>
+								</tr>
+							
+							
+						
+					
+					</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- 나의 수강과목-->
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 m_padding">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						나의 수강과목[2022년도 2학기]
+						
+					</h3>
+				</div>
+				<div class="panel-body main_table" style="overflow-y: auto;">
+					<table class="table table-hover table-condensed">
+						<colgroup>
+							<col width="15%">
+							<col width="55%">
+							<col width="15%">
+							<col width="15%">
+						</colgroup>
+
+						<thead>
+							<tr>
+								<th>과목번호</th>
+								<th>과목명</th>
+								<th>분반</th>
+								<th>학점</th>
+							</tr>
+						</thead>
+
+						<tbody>
+						
+							
+							
+								
+									
+									<tr>
+										<td>BE101a</td>
+										<td class="align_l">
+											
+												프로그래밍
+											
+											
+										</td>
+										<td>01</td>
+										<td class="align_c">3</td>
+									</tr>
+									
+								
+									
+									<tr>
+										<td>BS101</td>
+										<td class="align_l">
+											
+												다변수 미적분학
+											
+											
+										</td>
+										<td>04</td>
+										<td class="align_c">3</td>
+									</tr>
+									
+								
+									
+									<tr>
+										<td>BS105a</td>
+										<td class="align_l">
+											
+												일반물리Ⅱ
+											
+											
+										</td>
+										<td>01</td>
+										<td class="align_c">3</td>
+									</tr>
+									
+								
+									
+									<tr>
+										<td>BS113</td>
+										<td class="align_l">
+											
+												일반화학실험 I
+											
+											
+										</td>
+										<td>08</td>
+										<td class="align_c">1</td>
+									</tr>
+									
+								
+									
+									<tr>
+										<td>BS114</td>
+										<td class="align_l">
+											
+												생명과학개론
+											
+											
+										</td>
+										<td>01</td>
+										<td class="align_c">3</td>
+									</tr>
+									
+								
+									
+									<tr>
+										<td>BS119</td>
+										<td class="align_l">
+											
+												일반화학Ⅱ 
+											
+											
+										</td>
+										<td>02</td>
+										<td class="align_c">3</td>
+									</tr>
+									
+								
+									
+									<tr>
+										<td>GC102</td>
+										<td class="align_l">
+											
+												Academic English: Research and Writing
+											
+											
+										</td>
+										<td>06</td>
+										<td class="align_c">2</td>
+									</tr>
+									
+								
+							
+						
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	
+
+		</div>
+	</div>
+</div>
+<!-- 몸통부분 끝 -->
+
+<!-- 다리부분 시작 -->
+<!--
+<div class="row">
+	<div id="footer" class="hidden-xs hidden-sm hidden-md col-lg-12">
+		<h1 style="text-align: center;">
+			푸터 라지라지라지
+		</h1>
+	</div>
+	<div id="footer" class="col-xs-12 col-sm-12 col-md-12 hidden-lg">
+		<h1 style="text-align: center;">
+			푸터 쪼꼬미
+		</h1>
+	</div>
+</div>
+ -->
+<!-- 다리부분 끝 -->
+</div>
+</div>
+<div class="footer_box">
+	<div class="foot">
+		<h1><img src="/Users/aronlee/Documents/mymy/img/footer_logo.png" alt="DGIST"></h1>
+		<h1 class="sub_logo"><img src="/Users/aronlee/Documents/mymy/img/footer_sub_logo.png" alt="DGIST"></h1>
+		<p>세계 초일류 융복합대학<br>
+			COPYRIGHT DGIST. ALL RIGHTS RESERVED.
+		</p>
+	</div>
+</div>
+
+
+
+
+
+
+
+<form id="urlForm" name="urlForm" method="post">
+	<input type="hidden" id="commonProgramTitle" name="commonProgramTitle" value="">
+	<input type="hidden" id="commonMenuId" name="commonMenuId" value="">
+	<input type="hidden" id="sttsMenuYn" name="sttsMenuYn" value="N">
+	<input type="hidden" id="commonMenuNav" name="commonMenuNav" value="">
+	<input type="hidden" id="commonMenuIs" name="commonMenuIs" value="Y">
+</form>
+<form id="homeForm" name="homeForm" method="post" action="/dgistPortalSSO.jsp">
+	<input type="hidden" id="LOGIN_ID" name="LOGIN_ID" value="minseok.lee">
+</form>
+<iframe id="dgistPortalFrm" name="dgistPortalFrm" height="0" width="0"></iframe>
+<div id="jstree-marker" style="display: none;">»</div><div id="jstree-marker-line" style="display: none;"></div><div id="vakata-contextmenu"></div></body></html>
